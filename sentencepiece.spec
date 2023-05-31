@@ -5,7 +5,7 @@
 #
 Name     : sentencepiece
 Version  : 0.1.97
-Release  : 2
+Release  : 3
 URL      : https://github.com/google/sentencepiece/archive/refs/tags/v0.1.97.tar.gz
 Source0  : https://github.com/google/sentencepiece/archive/refs/tags/v0.1.97.tar.gz
 Summary  : Unsupervised text tokenizer and detokenizer for Neural Network-based text generation.
@@ -79,7 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683661816
+export SOURCE_DATE_EPOCH=1685505182
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -112,7 +112,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1683661816
+export SOURCE_DATE_EPOCH=1685505182
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/sentencepiece
 cp %{_builddir}/sentencepiece-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/sentencepiece/2b8b815229aa8a61e483fb4ba0588b8b6c491890 || :
@@ -146,8 +146,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libsentencepiece.so
-/V3/usr/lib64/libsentencepiece_train.so
 /usr/include/sentencepiece_processor.h
 /usr/include/sentencepiece_trainer.h
 /usr/lib64/libsentencepiece.so
@@ -156,9 +154,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libsentencepiece.so.0
 /V3/usr/lib64/libsentencepiece.so.0.0.0
-/V3/usr/lib64/libsentencepiece_train.so.0
 /V3/usr/lib64/libsentencepiece_train.so.0.0.0
 /usr/lib64/libsentencepiece.so.0
 /usr/lib64/libsentencepiece.so.0.0.0
